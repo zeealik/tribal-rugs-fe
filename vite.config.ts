@@ -10,7 +10,7 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: path.join(__dirname, 'build'),
+    outDir: path.join(__dirname, 'dist'),
   },
   server: {
     host: true,
