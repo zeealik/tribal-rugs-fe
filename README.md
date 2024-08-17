@@ -26,14 +26,6 @@ A carpet selling site.
   - react
   - react hooks
   - typescript
-  - jsx-a11y
-
----
-
-### Testing
-
-- Jest + React Testing Library (plus some plugins)
-
 ---
 
 ### Styling
