@@ -84,7 +84,10 @@
     font-style: normal;
   }
 
-  html {
+  html,
+  span,
+  div,
+  p {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-style: normal;
