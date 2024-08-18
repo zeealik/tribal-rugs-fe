@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Search, ShoppingBag } from 'lucide-react'; // Import icons from lucide-react
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const menuItems = [
     { name: 'The Life Collection', href: '#' },
@@ -19,8 +20,27 @@ const Navbar = () => {
     { name: 'Flooring', href: '#' },
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="bg-white shadow-lg">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition duration-300 ${
+        isScrolled ? 'bg-white/80 backdrop-blur-lg shadow-lg' : 'bg-white'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           <Search className="text-gray-500 w-5 h-5" />
@@ -35,7 +55,7 @@ const Navbar = () => {
               <a
                 key={index}
                 href={item.href}
-                className="py-4 px-2 text-gray-500 hover:text-gray-900 transition duration-300"
+                className="py-4 px-2 text-[12px] text-gray-500 hover:text-gray-900 transition duration-300 hover:cursor-pointer"
               >
                 {item.name}
               </a>
