@@ -8,15 +8,15 @@ const Navbar = () => {
     { name: 'The Life Collection', href: '#' },
     { name: 'Handmade Khaddi Rugs', href: '#' },
     { name: 'Weekly Deals - Upto 50% OFF', href: '#' },
-    { name: 'Rugs', href: '#', dropdown: true },
-    { name: 'Sofas', href: '#', dropdown: true },
+    { name: 'Rugs', href: '#' },
+    { name: 'Sofas', href: '#' },
     { name: 'Dining Tables', href: '#' },
     { name: 'Center Tables', href: '#' },
-    { name: 'Decor', href: '#', dropdown: true },
-    { name: 'Dining', href: '#', dropdown: true },
+    { name: 'Decor', href: '#' },
+    { name: 'Dining', href: '#' },
     { name: 'Prayer Mats', href: '#' },
-    { name: 'Door & Bath Mats', href: '#', dropdown: true },
-    { name: 'Flooring', href: '#', dropdown: true },
+    { name: 'Door & Bath Mats', href: '#' },
+    { name: 'Flooring', href: '#' },
   ];
 
   return (
@@ -38,22 +38,6 @@ const Navbar = () => {
                 className="py-4 px-2 text-gray-500 hover:text-gray-900 transition duration-300"
               >
                 {item.name}
-                {item.dropdown && (
-                  <svg
-                    className="w-4 h-4 inline-block ml-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                )}
               </a>
             ))}
           </div>
