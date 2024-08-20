@@ -1,10 +1,9 @@
 import Features from '@/components/ui/description-product';
-import Footer from '@/components/ui/footer';
 import ImageCarousel from '@/components/ui/image-carousel';
-import Navbar from '@/components/ui/navigation-bar';
 import IraniRug1 from '@/assets/rugs/irani-rug-1.jpeg';
 import IraniRug2 from '@/assets/rugs/irani-rug-2.jpeg';
 import IraniRug3 from '@/assets/rugs/irani-rug-3.jpeg';
+import MainLayout from '@/layouts/main-layout';
 
 const images = [
   {
@@ -24,12 +23,10 @@ const images = [
 
 function LandingPage() {
   return (
-    <div>
-      <Navbar />
+    <MainLayout>
       <ImageCarousel images={images} />
       <Features />
-      <Footer />
-    </div>
+    </MainLayout>
   );
 }
 

@@ -6,16 +6,12 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-start">
           <div className="flex flex-col mb-6 md:mb-0">
-            <h2 className="text-2xl font-bold mb-2">Shams Carpets</h2>
+            <h2 className="text-2xl font-bold mb-2">Tribal Rugs Palace</h2>
             <p className="mb-1">Monday-Saturday</p>
             <p className="mb-4">10 AM to 7 PM</p>
             <div className="flex items-center mb-2">
               <Phone className="mr-2" />
-              <span>+92 309 3474066</span>
-            </div>
-            <div className="flex items-center mb-2">
-              <Phone className="mr-2" />
-              <span>+92 307 8420066</span>
+              <span>+92 303 2332787</span>
             </div>
             <div className="flex items-center mb-2">
               <Mail className="mr-2" />
@@ -98,7 +94,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="text-center mt-8">
-          <p>&copy; 2024 Shams Carpets. All rights reserved.</p>
+          <p>&copy; 2024 Tribal Rugs Palace. All rights reserved.</p>
         </div>
       </div>
     </footer>
