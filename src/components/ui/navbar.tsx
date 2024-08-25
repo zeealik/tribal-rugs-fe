@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Search, ShoppingBag } from 'lucide-react';
+import ThemeToggle from './theme-toggler';
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -22,11 +23,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -38,16 +35,22 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition duration-300 ${
-        isScrolled ? 'bg-white/80 backdrop-blur-lg shadow-lg' : 'bg-white'
+        isScrolled
+          ? 'bg-white/80 backdrop-blur-lg shadow-lg dark:bg-gray-800/80'
+          : 'bg-white dark:bg-gray-900'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center py-4">
-          <Search className="text-gray-500 w-5 h-5" />
-          <a href="#" className="font-semibold text-gray-500 text-lg">
+          <Search className="text-gray-500 dark:text-gray-400 w-5 h-5" />
+          <a href="#" className="font-semibold text-gray-500 dark:text-gray-400 text-lg">
             Tribal Rugs Palace
           </a>
-          <ShoppingBag className="text-gray-500 w-5 h-5" />
+          <div className="flex items-center space-x-4">
+            {/* Use the imported ThemeToggle component */}
+            <ThemeToggle />
+            <ShoppingBag className="text-gray-500 dark:text-gray-400 w-5 h-5" />
+          </div>
         </div>
         <div className="flex justify-center space-x-1">
           <div className="hidden md:flex items-center">
@@ -55,17 +58,17 @@ const Navbar = () => {
               <a
                 key={index}
                 href={item.href}
-                className="py-4 px-2 text-[12px] text-gray-500 hover:text-gray-900 transition duration-300 hover:cursor-pointer relative"
+                className="py-4 px-2 text-[12px] text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition duration-300 hover:cursor-pointer relative"
               >
                 {item.name}
-                <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-gray-900 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-gray-900 dark:bg-white transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
           </div>
           <div className="md:hidden flex items-center">
             <button onClick={() => setIsOpen(!isOpen)} className="outline-none mobile-menu-button">
               <svg
-                className="w-6 h-6 text-gray-500 hover:text-gray-900"
+                className="w-6 h-6 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
                 fill="none"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -84,7 +87,7 @@ const Navbar = () => {
           <a
             key={index}
             href={item.href}
-            className="block py-2 px-4 text-sm hover:bg-gray-200 transition duration-300"
+            className="block py-2 px-4 text-sm text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300"
           >
             {item.name}
           </a>

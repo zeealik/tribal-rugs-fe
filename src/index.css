@@ -35,10 +35,15 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 35.6 98.4% 52.4%;
 
+    --color-bg: #ffffff; /* Light mode background */
+    --color-text: #000000; /* Light mode text */
     /* --radius: 0.4rem; */
   }
 
   .dark {
+    --color-bg: #121212; /* Dark mode background */
+    --color-text: #e0e0e0; /* Dark mode text */
+
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
