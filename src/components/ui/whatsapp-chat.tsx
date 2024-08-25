@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import WhatsAppIcon from '@/assets/icons/whatsapp.svg';
 import CustomerCare from '@/assets/icons/customer-care.svg';
+import { WHATSAPP_DEFAULT_MESSAGE, WHATSAPP_PHONE_NUMBER } from '@/lib/constants';
+import { isMobile } from '@/lib/helpers';
 
 interface ChatboxProps {
   onClose: () => void;
@@ -18,15 +20,16 @@ const WhatsAppButton: React.FC<{ onClick: () => void }> = ({ onClick }) => {
 };
 
 const Chatbox: React.FC<ChatboxProps> = ({ onClose }) => {
-  const [message, setMessage] = useState('Hello! I have a few questions. Can you help?');
-  const whatsappNumber = '+923032332787';
+  const [message, setMessage] = useState(WHATSAPP_DEFAULT_MESSAGE);
 
   const handleSendMessage = () => {
     const encodedMessage = encodeURIComponent(message);
-    window.open(
-      `https://web.whatsapp.com/send?phone=${whatsappNumber}&text=${encodedMessage}`,
-      '_blank'
-    );
+
+    const whatsappUrl = isMobile
+      ? `whatsapp://send?phone=${WHATSAPP_PHONE_NUMBER}&text=${encodedMessage}`
+      : `https://web.whatsapp.com/send?phone=${WHATSAPP_PHONE_NUMBER}&text=${encodedMessage}`;
+
+    window.open(whatsappUrl, '_blank');
   };
 
   return (
@@ -63,6 +66,7 @@ const Chatbox: React.FC<ChatboxProps> = ({ onClose }) => {
     </div>
   );
 };
+
 
 const WhatsAppChat: React.FC = () => {
   const [isChatboxOpen, setIsChatboxOpen] = useState(false);
