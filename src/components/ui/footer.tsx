@@ -1,3 +1,4 @@
+import { WHATSAPP_PHONE_NUMBER } from '@/lib/constants';
 import { Mail, Phone, MapPin, Instagram, Facebook, Youtube } from 'lucide-react';
 
 const Footer = () => {
@@ -11,7 +12,7 @@ const Footer = () => {
             <p className="mb-4">10 AM to 7 PM</p>
             <div className="flex items-center mb-2">
               <Phone className="mr-2" />
-              <span>+92 303 2332787</span>
+              <span>{WHATSAPP_PHONE_NUMBER}</span>
             </div>
             <div className="flex items-center mb-2">
               <Mail className="mr-2" />

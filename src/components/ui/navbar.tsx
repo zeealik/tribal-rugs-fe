@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search, ShoppingBag } from 'lucide-react';
+import { Search, ShoppingBag, Menu, X, ChevronLeft } from 'lucide-react'; // Imported additional icons for sidebar
 import ThemeToggle from './theme-toggler';
 
 const Navbar: React.FC = () => {
@@ -33,67 +33,84 @@ const Navbar: React.FC = () => {
   }, []);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition duration-300 ${
-        isScrolled
-          ? 'bg-white/80 backdrop-blur-lg shadow-lg dark:bg-gray-800/80'
-          : 'bg-white dark:bg-gray-900'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
-          <Search className="text-gray-500 dark:text-gray-400 w-5 h-5" />
-          <a href="#" className="font-semibold text-gray-500 dark:text-gray-400 text-lg">
-            Tribal Rugs Palace
-          </a>
-          <div className="flex items-center space-x-4">
-            {/* Use the imported ThemeToggle component */}
-            <ThemeToggle />
-            <ShoppingBag className="text-gray-500 dark:text-gray-400 w-5 h-5" />
+    <>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition duration-300 ${
+          isScrolled
+            ? 'bg-white/80 backdrop-blur-lg shadow-lg dark:bg-gray-800/80'
+            : 'bg-white dark:bg-gray-900'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex justify-between items-center py-4">
+            {/* Left Div: Search and Breadcrumb Icons */}
+            <div className="flex items-center space-x-4">
+              <button onClick={() => setIsOpen(!isOpen)} className="md:hidden outline-none">
+                {isOpen ? (
+                  <X className="w-6 h-6 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white" />
+                ) : (
+                  <Menu className="w-6 h-6 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white" />
+                )}
+              </button>
+              <Search className="text-gray-500 dark:text-gray-400 w-5 h-5" />
+              {/* <button className="block sm:hidden">
+                <ChevronLeft className="text-gray-500 dark:text-gray-400 w-5 h-5" />
+              </button> */}
+            </div>
+
+            {/* Center Div: Page Title */}
+            <div className="flex-1 text-center">
+              <a href="#" className="font-semibold text-gray-500 dark:text-gray-400 text-lg">
+                Tribal Rugs Palace
+              </a>
+            </div>
+
+            {/* Right Div: Cart and Theme Toggle */}
+            <div className="flex items-center space-x-4">
+              <ThemeToggle />
+              <ShoppingBag className="text-gray-500 dark:text-gray-400 w-5 h-5" />
+            </div>
+          </div>
+          <div className="flex justify-center space-x-1">
+            <div className="hidden md:flex items-center">
+              {menuItems.map((item, index) => (
+                <a
+                  key={index}
+                  href={item.href}
+                  className="py-4 px-2 text-[12px] text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition duration-300 hover:cursor-pointer relative"
+                >
+                  {item.name}
+                  <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-gray-900 dark:bg-white transition-all duration-300 group-hover:w-full"></span>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
-        <div className="flex justify-center space-x-1">
-          <div className="hidden md:flex items-center">
+      </nav>
+
+      {/* Sidebar */}
+      <div
+        className={`fixed top-0 left-0 h-full w-64 bg-white transition-transform duration-300 ${
+          isOpen ? 'translate-x-0' : '-translate-x-full'
+        } z-50`}
+      >
+        <div className="absolute top-0 left-0 w-full h-full bg-white/70 backdrop-blur-lg" />
+        <div className="relative z-10 p-4">
+          <div className="flex flex-col">
             {menuItems.map((item, index) => (
               <a
                 key={index}
                 href={item.href}
-                className="py-4 px-2 text-[12px] text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition duration-300 hover:cursor-pointer relative"
+                className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 transition duration-300"
+                onClick={() => setIsOpen(false)} // Close the sidebar when an item is clicked
               >
                 {item.name}
-                <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-gray-900 dark:bg-white transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
           </div>
-          <div className="md:hidden flex items-center">
-            <button onClick={() => setIsOpen(!isOpen)} className="outline-none mobile-menu-button">
-              <svg
-                className="w-6 h-6 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                {isOpen ? <path d="M6 18L18 6M6 6l12 12" /> : <path d="M4 6h16M4 12h16M4 18h16" />}
-              </svg>
-            </button>
-          </div>
         </div>
       </div>
-      <div className={`${isOpen ? 'block' : 'hidden'} md:hidden`}>
-        {menuItems.map((item, index) => (
-          <a
-            key={index}
-            href={item.href}
-            className="block py-2 px-4 text-sm text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300"
-          >
-            {item.name}
-          </a>
-        ))}
-      </div>
-    </nav>
+    </>
   );
 };
 
