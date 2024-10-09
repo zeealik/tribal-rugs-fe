@@ -1,7 +1,7 @@
 import ImageCarousel from '@/components/ui/image-carousel';
 import MainLayout from '@/layouts/main-layout';
 import GallerySection from '@/components/ui/sections/gallery-section';
-import Rug1 from '@/assets/rugs/rug-1.webp'; // Use WebP format
+import Rug1 from '@/assets/rugs/rug-1.webp';
 import Rug2 from '@/assets/rugs/rug-2.webp';
 import Rug3 from '@/assets/rugs/rug-3.webp';
 import Rug4 from '@/assets/rugs/rug-4.webp';
@@ -11,8 +11,8 @@ import Rug8 from '@/assets/rugs/rug-8.webp';
 import Rug9 from '@/assets/rugs/rug-9.webp';
 
 interface LazyImageProps {
-  src: string; // Source of the image
-  alt: string; // Alt text for accessibility
+  src: string;
+  alt: string;
 }
 
 const LazyImage: React.FC<LazyImageProps> = ({ src, alt }) => (
@@ -49,19 +49,17 @@ const rugImages = [
 function LandingPage() {
   return (
     <MainLayout>
-      {/* Carousel with compressed images */}
       <ImageCarousel
         images={images.map((img) => ({
           ...img,
-          src: `${img.src}?w=800`, // Resized image for carousel
+          src: `${img.src}?w=800`,
         }))}
       />
-      {/* Gallery section with lazy loading and responsive images */}
       <GallerySection
         title="Rug Collections"
         images={rugImages.map((rug) => ({
           ...rug,
-          image: <LazyImage src={rug.image} alt={rug.title} />, // Optimized rug images
+          image: <LazyImage src={rug.image} alt={rug.title} />,
         }))}
       />
     </MainLayout>
