@@ -67,7 +67,6 @@ const Chatbox: React.FC<ChatboxProps> = ({ onClose }) => {
   );
 };
 
-
 const WhatsAppChat: React.FC = () => {
   const [isChatboxOpen, setIsChatboxOpen] = useState(false);
 
