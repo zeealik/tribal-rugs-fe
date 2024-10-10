@@ -60,7 +60,10 @@ const Navbar: React.FC = () => {
 
             {/* Center Div: Page Title */}
             <div className="flex-1 text-center">
-              <a href="#" className="font-semibold text-gray-500 dark:text-gray-400 text-lg">
+              <a
+                href="/"
+                className="font-semibold text-gray-500 dark:text-gray-400 text-lg cursor-pointer"
+              >
                 Tribal Rugs Palace
               </a>
             </div>

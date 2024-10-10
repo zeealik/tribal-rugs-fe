@@ -16,20 +16,18 @@ const Footer = () => {
             </div>
             <div className="flex items-center mb-2">
               <Mail className="mr-2" />
-              <span>shamsyousafzai@gmail.com</span>
+              <span>shamsyousafzai999@gmail.com</span>
             </div>
             <div className="flex items-center">
               <MapPin className="mr-2" />
               <span>F-6, Super Market Islamabad</span>
             </div>
           </div>
-          <div className="flex flex-col mb-6 md:mb-0">
+          {/* about us  */}
+          <div className="flex flex-col mb-6 md:mb-0 cursor-pointer">
             <h3 className="font-bold mb-2">ABOUT US</h3>
             <a href="#" className="mb-1">
               About Us
-            </a>
-            <a href="#" className="mb-1">
-              Careers
             </a>
             <a href="#" className="mb-1">
               Store Locator
@@ -43,11 +41,9 @@ const Footer = () => {
             <a href="#" className="mb-1">
               Term & Conditions
             </a>
-            <a href="#" className="mb-1">
-              Blog
-            </a>
           </div>
-          <div className="flex flex-col mb-6 md:mb-0">
+          {/* customer service  */}
+          <div className="flex flex-col mb-6 md:mb-0 cursor-pointer">
             <h3 className="font-bold mb-2">CUSTOMER SERVICE</h3>
             <a href="#" className="mb-1">
               How To Order
@@ -55,7 +51,7 @@ const Footer = () => {
             <a href="#" className="mb-1">
               FAQs
             </a>
-            <a href="#" className="mb-1">
+            <a href="/contact" className="mb-1">
               Contact Us
             </a>
             <a href="#" className="mb-1">
@@ -68,7 +64,9 @@ const Footer = () => {
               Track Your Order
             </a>
           </div>
-          <div className="flex flex-col">
+
+          {/* newsletter  */}
+          <div className="flex flex-col mb-6 md:mb-0 cursor-pointer">
             <h3 className="font-bold mb-2">NEWSLETTER</h3>
             <p className="mb-2">
               Get the latest style updates and special deals directly in your inbox
