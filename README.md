@@ -1,79 +1,68 @@
-### Tribal Rugs Palace
-A carpet selling site.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Available Scripts
 
+In the project directory, you can run:
 
-### Tech Stack - Overview
+### `yarn start`
 
-- Vite
-- React - Typscript
-  - react-error-boundary
-- pnpm
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
----
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-### Editor Config
+### `yarn test`
 
-- vscode settings & extension recommendations
-- `.editorconfig` file
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
----
+### `yarn build`
 
-### Lint and Formatting
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-- Eslint & Prettier Configured
-- Lints
-  - react
-  - react hooks
-  - typescript
----
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
-### Styling
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-- TailwindCSS v3
+### `yarn eject`
 
----
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-# Other Recommended Libraries:
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-### Forms
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-- React Hook Form
-- Zod (for validations)
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-### CSS-in-js
+## Learn More
 
-- Emotion
-- Complie Time Atomic CSS-in-Js
-  - Stylex (Facebook, not Open Source yet)
-  - Linaria
-  - Compiled (still in beta)
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-### Routing
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-- React-Router-Dom
-- React Location
+### Code Splitting
 
-### Date Manipulation
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-- Dayjs
-- date-fns
-- Luxon
+### Analyzing the Bundle Size
 
-### HTTP Client
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-- Ky
-- Axios
+### Making a Progressive Web App
 
-### Global Store (full-blown / lite-version)
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-- Redux Toolkit / Zustand
-- Recoil / Jotai
-- Mobx / Valtio
-- xstate / robot
+### Advanced Configuration
 
-### Server State
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-- React Query
-- SWR
-- RTKQuery
+### Deployment
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+### `yarn build` fails to minify
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
