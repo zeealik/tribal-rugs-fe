@@ -22,7 +22,7 @@ const HeaderFive = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Flone
+              Tribal Rugs Palace
             </a>
             .All Rights Reserved.
           </p>

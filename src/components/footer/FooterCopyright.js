@@ -17,7 +17,7 @@ const FooterCopyright = ({ footerLogo, spaceBottomClass, colorClass }) => {
           rel="noopener noreferrer"
           target="_blank"
         >
-          Flone
+          Tribal Rugs Palace
         </a>
         .<br /> All Rights Reserved
       </p>
