@@ -34,7 +34,7 @@ const IconGroup = ({ iconWhiteClass }) => {
           </form>
         </div>
       </div>
-      <div className="same-style account-setting d-none d-lg-block">
+      {/* <div className="same-style account-setting d-none d-lg-block">
         <button
           className="account-setting-active"
           onClick={e => handleClick(e)}
@@ -58,7 +58,7 @@ const IconGroup = ({ iconWhiteClass }) => {
             </li>
           </ul>
         </div>
-      </div>
+      </div> */}
       <div className="same-style header-compare">
         <Link to={process.env.PUBLIC_URL + "/compare"}>
           <i className="pe-7s-shuffle" />

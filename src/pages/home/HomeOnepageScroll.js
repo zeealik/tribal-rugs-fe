@@ -37,7 +37,7 @@ const HomeOnepageScroll = () => {
             headerBgClass="bg-white"
           />
         </Header>
-        <SectionsContainer {...options} className="bg-purple-2">
+        <SectionsContainer {...options} className="bg-rust-orange-2">
           {sliderData &&
             sliderData.map((single, key) => {
               return (

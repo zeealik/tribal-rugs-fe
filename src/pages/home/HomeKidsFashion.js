@@ -9,7 +9,7 @@ import TabProductEleven from "../../wrappers/product/TabProductEleven";
 import TabProductTwelve from "../../wrappers/product/TabProductTwelve";
 import NewsletterThree from "../../wrappers/newsletter/NewsletterThree";
 
-const HomeFashion = () => {
+const TribalHome = () => {
   return (
     <Fragment>
       <SEO
@@ -61,4 +61,4 @@ const HomeFashion = () => {
   );
 };
 
-export default HomeFashion;
+export default TribalHome;

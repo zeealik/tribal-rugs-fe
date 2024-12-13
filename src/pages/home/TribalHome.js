@@ -6,12 +6,12 @@ import FeatureIcon from "../../wrappers/feature-icon/FeatureIcon";
 import TabProduct from "../../wrappers/product/TabProduct";
 import BlogFeatured from "../../wrappers/blog-featured/BlogFeatured";
 
-const HomeFashion = () => {
+const TribalHome = () => {
   return (
     <Fragment>
       <SEO
-        titleTemplate="Fashion Home"
-        description="Fashion home of flone react minimalist eCommerce template."
+        titleTemplate="Tribal Rugs Palace"
+        description="Home of Rugs, Carpets and much more."
       />
       <LayoutOne
         headerContainerClass="container-fluid"
@@ -33,4 +33,4 @@ const HomeFashion = () => {
   );
 };
 
-export default HomeFashion;
+export default TribalHome;

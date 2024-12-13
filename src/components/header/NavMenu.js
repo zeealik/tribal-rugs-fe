@@ -5,44 +5,42 @@ import clsx from "clsx";
 
 const NavMenu = ({ menuWhiteClass, sidebarMenu }) => {
   const { t } = useTranslation();
-  
+
   return (
     <div
-      className={clsx(sidebarMenu
+      className={clsx(
+        sidebarMenu
           ? "sidebar-menu"
-          : `main-menu ${menuWhiteClass ? menuWhiteClass : ""}`)}
+          : `main-menu ${menuWhiteClass ? menuWhiteClass : ""}`
+      )}
     >
       <nav>
         <ul>
           <li>
             <Link to={process.env.PUBLIC_URL + "/"}>
               {t("home")}
-              {sidebarMenu ? (
+              {/* {sidebarMenu ? (
                 <span>
                   <i className="fa fa-angle-right"></i>
                 </span>
               ) : (
                 <i className="fa fa-angle-down" />
-              )}
+              )} */}
             </Link>
-            <ul className="mega-menu mega-menu-padding">
+            {/* <ul className='mega-menu mega-menu-padding'>
               <li>
                 <ul>
-               
                   <li>
                     <Link to={process.env.PUBLIC_URL + "/home-fashion"}>
                       {t("home_fashion")}
                     </Link>
                   </li>
-                  
-
                 </ul>
               </li>
-            </ul>
+            </ul> */}
           </li>
 
-
-          <li>
+          {/* <li>
             <Link to={process.env.PUBLIC_URL + "/shop-grid-standard"}>
               {" "}
               {t("shop")}
@@ -74,23 +72,21 @@ const NavMenu = ({ menuWhiteClass, sidebarMenu }) => {
             <Link to={process.env.PUBLIC_URL + "/shop-grid-standard"}>
               {t("collection")}
             </Link>
-          </li>
-          <li>
+          </li> */}
+          {/* <li>
             <Link to={process.env.PUBLIC_URL + "/"}>
               {t("pages")}
               {sidebarMenu ? (
                 <span>
-                  <i className="fa fa-angle-right"></i>
+                  <i className='fa fa-angle-right'></i>
                 </span>
               ) : (
-                <i className="fa fa-angle-down" />
+                <i className='fa fa-angle-down' />
               )}
             </Link>
-            <ul className="submenu">
+            <ul className='submenu'>
               <li>
-                <Link to={process.env.PUBLIC_URL + "/cart"}>
-                  {t("cart")}
-                </Link>
+                <Link to={process.env.PUBLIC_URL + "/cart"}>{t("cart")}</Link>
               </li>
               <li>
                 <Link to={process.env.PUBLIC_URL + "/checkout"}>
@@ -133,7 +129,7 @@ const NavMenu = ({ menuWhiteClass, sidebarMenu }) => {
                 </Link>
               </li>
             </ul>
-          </li>
+          </li> */}
           {/* <li>
             <Link to={process.env.PUBLIC_URL + "/blog-standard"}>
               {t("blog")}

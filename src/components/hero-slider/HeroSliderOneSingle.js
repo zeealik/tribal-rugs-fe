@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const HeroSliderOneSingle = ({ data }) => {
   return (
-    <div className="single-slider slider-height-1 bg-purple">
+    <div className="single-slider slider-height-1 bg-rust-orange">
       <div className="container">
         <div className="row">
           <div className="col-xl-6 col-lg-6 col-md-6 col-12 col-sm-6">
@@ -16,7 +16,7 @@ const HeroSliderOneSingle = ({ data }) => {
                   className="animated"
                   to={process.env.PUBLIC_URL + data.url}
                 >
-                  SHOP NOW
+                  BUY NOW
                 </Link>
               </div>
             </div>
